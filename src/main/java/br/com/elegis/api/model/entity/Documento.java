@@ -17,9 +17,13 @@ public class Documento {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(name="nm_documento", nullable = false)
-	private String nomeDocumento;
-	
+	@Column(name="nm_orgao", nullable = false)
+	private String nomeOrgao;
+
+	@Id
+	@Column(name="cd_assunto_basico", nullable=false)
+	private String assuntoBasico;
+
 	@Column(name="cd_tipo_documento", nullable = false)
 	private String tipoDocumento;
 	
@@ -27,39 +31,6 @@ public class Documento {
 	private Integer numeroTipoDocumento;
 	
 
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getNomeDocumento() {
-		return nomeDocumento;
-	}
-	
-	public void setNomeDocumento(String nomeDocumento) {
-		this.nomeDocumento = nomeDocumento;
-	}
-	
-	public String getTipoDocumento() {
-		return tipoDocumento;
-	}
-
-	public void setTipoDocumento(String tipoDocumento) {
-		this.tipoDocumento = tipoDocumento;
-	}
-
-	public Integer getNumeroTipoDocumento() {
-		return numeroTipoDocumento;
-	}
-
-	public void setNumeroTipoDocumento(Integer numeroTipoDocumento) {
-		this.numeroTipoDocumento = numeroTipoDocumento;
-	}
-
-	
 	@Override
 	public boolean equals(Object obj) {
 		// TODO Auto-generated method stub
